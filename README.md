@@ -9,7 +9,6 @@ Small self-contained GUI wrapper around **Jsxer** (v1.7.4) that lets you pick a 
 - Jsxer original project — https://github.com/AngeloD2022/jsxer  
 - Wrapper / builder — Vibe
 
-
 ## What's included in this folder
 ```
 jsxer-v1.7.4-Windows/
@@ -40,11 +39,26 @@ jsxer-v1.7.4-Windows/
 4. The original file is **never modified**. The runtime will:
    - copy the original file to the Logs `temp` folder,
    - decode the copy / extract `@JSXBIN@` if wrapped,
-   - write the decoded JS to `<selectedfilename>-jsxer.jsx` (next to original),
    - rename & copy the temp copy to `<selectedfilename>-Jsxer<ext>` (next to original),
    - write `stderr` and `decode.log` inside `<selectedfilename>-JsxerLogs`.
 
 5. A messagebox will indicate success or point you to the logs in case of problems.
+
+---
+
+# What the decoder does to output header
+The produced decoded file's header block is normalized to:
+
+```text
+/*
+* Decompiled with Jsxer https://github.com/AngeloD2022/jsxer/tree/v1.7.4
+* Jsxer-Decoder by Vibe
+* Version: 1.7.4
+* JSXBIN 2.0
+*/
+```
+
+If the decoded output already has a leading `/* ... */` comment block, it is replaced — otherwise this block is prepended.
 
 ---
 
@@ -85,8 +99,9 @@ Notes:
 
 ---
 
-# Security & legal
+# Security, Ethics & legal
 - The tool executes the embedded `jsxer.exe` on files you supply. Only decode files you trust or have permission to examine.
+- **This project is provided for educational purposes only. Please do not use this project unethically.**
 - The Jsxer project is third-party software — see the included `jsxer-1.7.4-original sourceCode/LICENSE` for its license and attribution.
 - This wrapper and build scripts are provided as-is. Use at your own risk.
 
@@ -99,3 +114,7 @@ If you want any of the following, tell me which and I’ll give the script updat
 - Produce a Windows installer (MSI) that places the EXE on PATH.  
 - Add version-info metadata to the compiled EXE (Company/Product/FileVersion).
 
+---
+
+## Save this file
+This file was exported by the assistant. You can rename it to `README.md` or `Read.md` as you prefer.
