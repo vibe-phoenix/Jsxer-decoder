@@ -8,7 +8,7 @@ Small self-contained GUI wrapper around **Jsxer** (v1.7.4) that lets you pick a 
 # Credits
 - `Jsxer` original project and contributors — https://github.com/AngeloD2022/jsxer  
 - Wrapper / builder — Vibe
-```
+
 
 ## What's included in this folder
 ```
