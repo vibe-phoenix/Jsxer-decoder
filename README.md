@@ -1,7 +1,7 @@
 # README.md
 
 ## JSXER Decoder — packaged Windows build (v1.7.4)
-Small self-contained GUI wrapper around **Jsxer** (v1.7.4) that lets you pick a `.jsxbin` (or a wrapped `.js`/`.jsx`), decodes it with the embedded `jsxer.exe`, and saves the results and logs while **preserving the original file**.
+Small self-contained wrapper around **Jsxer** (v1.7.4) that lets you pick a `.jsxbin` (or a wrapped `.js`/`.jsx`), decodes it with the embedded `jsxer.exe`, and saves the results and logs while **preserving the original file**.
 
 ---
 
