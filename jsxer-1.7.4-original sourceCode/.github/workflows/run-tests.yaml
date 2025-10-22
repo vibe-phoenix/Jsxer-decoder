@@ -1,0 +1,32 @@
+on:
+  pull_request:
+    branches: [master]
+
+jobs:
+  run-tests:
+    name: Run Tests - ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        # macos arm64, macos x86_64, and windows
+        # at the time of writing this, you need to have macos-13 in order to build for x86.
+        os: [macos-latest, macos-13, windows-latest]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install CMake
+        uses: jwlawson/actions-setup-cmake@v1.13.1
+        with:
+          cmake-version: '3.26'
+
+      - name: Configure CMake
+        run: cmake .
+
+      - name: Build Project
+        run: cmake --build . --config debug
+
+      - name: Run Tests
+        run: ctest
